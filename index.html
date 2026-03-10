@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertex Search — Filipino Finance & Accounting Talent, UAE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sand: #F5F0E8;
+    --cream: #FAF7F2;
+    --deep: #0E1A14;
+    --forest: #1A3028;
+    --gold: #C9A84C;
+    --gold-light: #E8C96B;
+    --rust: #8B4513;
+    --text: #2A2A2A;
+    --muted: #6B6B6B;
+    --border: rgba(201,168,76,0.25);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: rgba(250,247,242,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--forest);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--forest); }
+
+  .nav-cta {
+    font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.65rem 1.6rem;
+    border: 1px solid var(--gold);
+    color: var(--forest);
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--cream); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(26,48,40,0.06) 0%, transparent 50%);
+  }
+
+  .hero-grid-lines {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 3rem 6rem 4rem;
+    position: relative; z-index: 1;
+  }
+
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.9s 0.2s ease both;
+  }
+  .hero-eyebrow-line {
+    width: 2.5rem; height: 1px; background: var(--gold);
+  }
+  .hero-eyebrow span {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--forest);
+    margin-bottom: 2rem;
+    animation: fadeUp 0.9s 0.35s ease both;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem; line-height: 1.75;
+    color: var(--muted); max-width: 42ch;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.9s 0.5s ease both;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1.2rem; align-items: center;
+    animation: fadeUp 0.9s 0.65s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 1rem 2.2rem;
+    background: var(--forest);
+    color: var(--cream);
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover { background: var(--gold); color: var(--deep); }
+  .btn-primary svg { transition: transform 0.3s; }
+  .btn-primary:hover svg { transform: translateX(4px); }
+
+  .btn-ghost {
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--forest); text-decoration: none;
+    border-bottom: 1px solid var(--gold); padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--gold); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    padding-top: 2.5rem; border-top: 1px solid var(--border);
+    animation: fadeUp 0.9s 0.8s ease both;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 300;
+    color: var(--forest); line-height: 1;
+  }
+  .stat-num span { color: var(--gold); }
+  .stat-label {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-top: 0.4rem;
+  }
+
+  /* Hero Right */
+  .hero-right {
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+    padding: 6rem 4rem 6rem 3rem;
+    position: relative; z-index: 1;
+  }
+
+  .hero-card {
+    background: var(--forest);
+    padding: 3rem;
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    animation: fadeUp 0.9s 0.4s ease both;
+    box-shadow: 0 32px 80px rgba(26,48,40,0.25);
+  }
+  .hero-card::before {
+    content: '';
+    position: absolute; top: -1px; left: -1px; right: -1px; bottom: -1px;
+    border: 1px solid var(--gold);
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  .hero-card-tag {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.8rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .hero-card-tag::before {
+    content: ''; display: block;
+    width: 1.5rem; height: 1px; background: var(--gold);
+  }
+  .hero-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 400; line-height: 1.3;
+    color: var(--cream); margin-bottom: 1.5rem;
+  }
+  .card-divider { width: 100%; height: 1px; background: rgba(201,168,76,0.2); margin: 1.5rem 0; }
+
+  .card-features { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+  .card-features li {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    font-size: 0.88rem; color: rgba(250,247,242,0.75); line-height: 1.5;
+  }
+  .card-features li::before {
+    content: '—'; color: var(--gold); flex-shrink: 0; margin-top: 1px;
+  }
+
+  .hero-card-flag {
+    position: absolute; top: -14px; right: 2rem;
+    background: var(--gold);
+    padding: 0.35rem 1rem;
+    font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--deep); font-weight: 500;
+  }
+
+  /* Floating elements */
+  .hero-deco-1 {
+    position: absolute; right: 44%; top: 15%;
+    width: 1px; height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-section {
+    background: var(--forest); padding: 1.2rem 0; overflow: hidden;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .marquee-track {
+    display: flex; gap: 4rem;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-item {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(201,168,76,0.7);
+    display: flex; align-items: center; gap: 4rem;
+  }
+  .marquee-dot {
+    width: 4px; height: 4px; background: var(--gold); border-radius: 50%; opacity: 0.4;
+    display: inline-block;
+  }
+
+  /* ── WHO WE SERVE ── */
+  .section {
+    padding: 7rem 4rem;
+  }
+
+  .section-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+
+  .section-eyebrow {
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;
+  }
+  .section-eyebrow-line { width: 2rem; height: 1px; background: var(--gold); }
+  .section-eyebrow span {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300; line-height: 1.2;
+    color: var(--forest);
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  .section-link {
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    white-space: nowrap;
+    transition: color 0.2s;
+    margin-bottom: 0.5rem;
+  }
+  .section-link:hover { color: var(--forest); border-color: var(--forest); }
+
+  /* Audience Cards */
+  .audience-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border: 1px solid var(--border);
+  }
+
+  .audience-card {
+    padding: 3.5rem; position: relative; overflow: hidden;
+    transition: background 0.4s;
+    cursor: default;
+  }
+  .audience-card:first-child { border-right: 1px solid var(--border); }
+  .audience-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.5s ease;
+  }
+  .audience-card:hover::after { transform: scaleX(1); }
+  .audience-card:hover { background: rgba(201,168,76,0.04); }
+
+  .audience-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; font-weight: 300; line-height: 1;
+    color: rgba(26,48,40,0.06);
+    position: absolute; top: 1.5rem; right: 2rem;
+  }
+
+  .audience-icon {
+    width: 48px; height: 48px; margin-bottom: 2rem;
+    background: rgba(201,168,76,0.1);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .audience-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem; font-weight: 400;
+    color: var(--forest); margin-bottom: 1rem; line-height: 1.2;
+  }
+
+  .audience-card p {
+    font-size: 0.9rem; line-height: 1.7; color: var(--muted);
+    margin-bottom: 2rem; max-width: 40ch;
+  }
+
+  .audience-tags {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .tag {
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: transparent;
+    transition: all 0.2s;
+  }
+  .audience-card:hover .tag { border-color: rgba(201,168,76,0.4); color: var(--forest); }
+
+  /* ── WHY US ── */
+  .why-section {
+    padding: 7rem 4rem;
+    background: var(--forest);
+    position: relative; overflow: hidden;
+  }
+  .why-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 50% 80% at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+  }
+
+  .why-section .section-title { color: var(--cream); }
+  .why-section .section-eyebrow span { color: rgba(201,168,76,0.8); }
+  .why-section .section-eyebrow-line { background: rgba(201,168,76,0.6); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid rgba(201,168,76,0.15);
+    margin-top: 4rem;
+  }
+
+  .why-card {
+    padding: 3rem 2.5rem;
+    border-right: 1px solid rgba(201,168,76,0.15);
+    position: relative; overflow: hidden;
+    transition: background 0.3s;
+  }
+  .why-card:last-child { border-right: none; }
+  .why-card:hover { background: rgba(201,168,76,0.05); }
+
+  .why-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 300;
+    color: rgba(201,168,76,0.15); line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .why-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400;
+    color: var(--cream); margin-bottom: 1rem; line-height: 1.3;
+  }
+
+  .why-card p {
+    font-size: 0.88rem; line-height: 1.7;
+    color: rgba(250,247,242,0.55);
+  }
+
+  /* ── PROCESS ── */
+  .process-section {
+    padding: 7rem 4rem;
+    background: var(--sand);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute; top: 1.6rem; left: 3rem; right: 3rem;
+    height: 1px; background: var(--border);
+  }
+
+  .process-step {
+    padding: 0 2rem 2rem;
+    position: relative;
+  }
+
+  .step-dot {
+    width: 14px; height: 14px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    background: var(--sand);
+    margin-bottom: 2rem;
+    position: relative; z-index: 1;
+    transition: background 0.3s;
+  }
+  .process-step:hover .step-dot { background: var(--gold); }
+
+  .step-num {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
+
+  .process-step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 400;
+    color: var(--forest); margin-bottom: 0.75rem; line-height: 1.3;
+  }
+
+  .process-step p {
+    font-size: 0.85rem; line-height: 1.65; color: var(--muted);
+  }
+
+  /* ── SECTORS ── */
+  .sectors-section { padding: 7rem 4rem; }
+
+  .sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .sector-card {
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: flex-start;
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .sector-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .sector-card:hover { border-color: rgba(201,168,76,0.5); }
+  .sector-card:hover::before { opacity: 1; }
+
+  .sector-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400;
+    color: var(--forest);
+  }
+  .sector-status {
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid;
+  }
+  .sector-status.active { border-color: var(--gold); color: var(--gold); }
+  .sector-status.future { border-color: var(--muted); color: var(--muted); opacity: 0.6; }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 8rem 4rem;
+    background: var(--deep);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 50%, rgba(201,168,76,0.12) 0%, transparent 60%);
+  }
+  .cta-bg-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(6rem, 15vw, 14rem);
+    font-weight: 300; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.02);
+    white-space: nowrap; pointer-events: none; user-select: none;
+  }
+
+  .cta-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+
+  .cta-section .section-eyebrow { justify-content: center; }
+  .cta-section .section-eyebrow span { color: rgba(201,168,76,0.8); }
+  .cta-section .section-eyebrow-line { background: rgba(201,168,76,0.6); }
+
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300; line-height: 1.15;
+    color: var(--cream); margin: 1.5rem 0 1rem;
+  }
+  .cta-title em { font-style: italic; color: var(--gold); }
+
+  .cta-sub {
+    font-size: 0.95rem; line-height: 1.75; color: rgba(250,247,242,0.55);
+    margin-bottom: 3rem;
+  }
+
+  .cta-actions { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-outline-gold {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 1rem 2.2rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.3s;
+  }
+  .btn-outline-gold:hover { background: var(--gold); color: var(--deep); }
+
+  .btn-cream {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 1rem 2.2rem;
+    background: var(--cream);
+    color: var(--deep);
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.3s;
+  }
+  .btn-cream:hover { background: var(--gold); color: var(--deep); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--forest);
+    padding: 3rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  footer .nav-logo { color: var(--cream); }
+
+  .footer-meta {
+    font-size: 0.72rem; letter-spacing: 0.08em;
+    color: rgba(250,247,242,0.35);
+    display: flex; gap: 2rem; align-items: center;
+  }
+  .footer-meta a { color: inherit; text-decoration: none; transition: color 0.2s; }
+  .footer-meta a:hover { color: var(--gold); }
+
+  .footer-badges {
+    display: flex; gap: 0.8rem;
+  }
+  .badge {
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(201,168,76,0.25);
+    color: rgba(201,168,76,0.6);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0; transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 2rem 3rem; }
+    .hero-right { padding: 2rem 2rem 4rem; }
+    .hero-card { max-width: 100%; }
+    .hero-deco-1 { display: none; }
+    .section { padding: 4rem 2rem; }
+    .why-section, .process-section, .sectors-section, .cta-section { padding: 4rem 2rem; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .audience-card:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-card { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .process-steps::before { display: none; }
+    .sectors-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 2rem; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
+    .footer-meta { flex-direction: column; gap: 0.5rem; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><span>V</span>ERTEX SEARCH</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Enquire Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-deco-1"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Dubai · UAE · Est. 2026</span>
+    </div>
+
+    <h1 class="hero-title">
+      Senior Filipino<br>
+      Finance Talent<br>
+      <em>Placed with Precision.</em>
+    </h1>
+
+    <p class="hero-sub">
+      A boutique UAE recruitment consultancy specialising exclusively in Accounting & Finance professionals from the Philippines — connecting elite talent with the region's most respected employers.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        Hire Top Talent
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#services" class="btn-ghost">Explore Services</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">UAE<span>‑Wide</span></div>
+        <div class="stat-label">Client Coverage</div>
+      </div>
+      <div>
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">Finance Specialist</div>
+      </div>
+      <div>
+        <div class="stat-num">CPA<span>/ACCA</span></div>
+        <div class="stat-label">Qualified Talent</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-card-flag">Now Placing</div>
+      <div class="hero-card-tag">Candidate Niche</div>
+      <h3>Filipino Finance &amp; Accounting Professionals — Manager Level &amp; Above</h3>
+      <div class="card-divider"></div>
+      <ul class="card-features">
+        <li>Accounting &amp; Finance Managers currently under-levelled or underpaid in the UAE market</li>
+        <li>CPA, CMA, ACCA qualified professionals ready for their next move</li>
+        <li>Philippines-based talent open to UAE relocation or remote roles</li>
+        <li>Senior Managers, Directors and CFO-track professionals</li>
+        <li>Placed exclusively with reputable, employer-paid mandates only</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-item">
+      Permanent Recruitment <span class="marquee-dot"></span> Contract &amp; Interim <span class="marquee-dot"></span> Accounting &amp; Finance <span class="marquee-dot"></span> UAE-Wide Placement <span class="marquee-dot"></span> Filipino Talent Specialists <span class="marquee-dot"></span> Big 4 Partnerships <span class="marquee-dot"></span> Banking &amp; Financial Services <span class="marquee-dot"></span> Government &amp; Semi-Government <span class="marquee-dot"></span> Ethical Recruitment <span class="marquee-dot"></span> Market-Aligned Compensation
+    </div>
+    <!-- duplicate for seamless loop -->
+    <div class="marquee-item" aria-hidden="true">
+      Permanent Recruitment <span class="marquee-dot"></span> Contract &amp; Interim <span class="marquee-dot"></span> Accounting &amp; Finance <span class="marquee-dot"></span> UAE-Wide Placement <span class="marquee-dot"></span> Filipino Talent Specialists <span class="marquee-dot"></span> Big 4 Partnerships <span class="marquee-dot"></span> Banking &amp; Financial Services <span class="marquee-dot"></span> Government &amp; Semi-Government <span class="marquee-dot"></span> Ethical Recruitment <span class="marquee-dot"></span> Market-Aligned Compensation
+    </div>
+  </div>
+</div>
+
+<!-- WHO WE SERVE -->
+<section class="section" id="services">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Who We Serve</span>
+      </div>
+      <h2 class="section-title">Two sides of<br><em>one specialist equation</em></h2>
+    </div>
+    <a href="#contact" class="section-link">Start a conversation →</a>
+  </div>
+
+  <div class="audience-grid">
+    <div class="audience-card reveal">
+      <div class="audience-num">01</div>
+      <div class="audience-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      </div>
+      <h3>Employer Clients</h3>
+      <p>We partner with the UAE's most established and reputable organisations seeking senior Filipino finance talent — operating on a success-fee or retained basis only.</p>
+      <div class="audience-tags">
+        <span class="tag">Multinationals</span>
+        <span class="tag">Big 4 Firms</span>
+        <span class="tag">Banks</span>
+        <span class="tag">Government Entities</span>
+        <span class="tag">Family Offices</span>
+        <span class="tag">Listed Companies</span>
+      </div>
+    </div>
+
+    <div class="audience-card reveal reveal-delay-2">
+      <div class="audience-num">02</div>
+      <div class="audience-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3>Filipino Professionals</h3>
+      <p>We exclusively represent Filipino Accounting & Finance professionals at Manager level and above — whether based in the UAE or relocating from the Philippines.</p>
+      <div class="audience-tags">
+        <span class="tag">Finance Managers</span>
+        <span class="tag">CPA / CMA / ACCA</span>
+        <span class="tag">Senior Directors</span>
+        <span class="tag">UAE-Based</span>
+        <span class="tag">Philippines-Based</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" id="why">
+  <div style="position:relative;z-index:1;">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>Our Difference</span>
+        </div>
+        <h2 class="section-title">Built on focus,<br><em>trust and integrity</em></h2>
+      </div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-num">01</div>
+        <h4>Deep Specialist Focus</h4>
+        <p>We don't generalist. We place Filipino Accounting & Finance professionals only — which means deeper networks, sharper market insight, and better outcomes for both sides.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-num">02</div>
+        <h4>Ethical by Design</h4>
+        <p>No undercutting. No misleading claims. No visa or salary guarantees. We are fully licensed under UAE recruitment law and POEA / DMW compliance standards.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-num">03</div>
+        <h4>Employer-Paid Only</h4>
+        <p>Candidates are never charged. Our success-fee and retained model ensures our incentives are fully aligned with placing the right person — not the fastest person.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">04</div>
+        <h4>Boutique Attention</h4>
+        <p>You deal directly with our founders — not juniors, not automations. Every mandate receives senior-level strategy, care and accountability.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-num">05</div>
+        <h4>Market-Aligned Compensation</h4>
+        <p>We advocate for fair, market-rate compensation for every candidate. Undercutting is not part of our model — it undermines trust and long-term retention.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-num">06</div>
+        <h4>UAE-Rooted, GCC-Ready</h4>
+        <p>Headquartered and licensed in Dubai, with GCC expansion planned for Year 2. We understand the regional landscape and the nuances that matter to top-tier employers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>How It Works</span>
+      </div>
+      <h2 class="section-title">A high-touch process<br><em>from brief to placement</em></h2>
+    </div>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-dot"></div>
+      <div class="step-num">Step 01</div>
+      <h4>Discovery &amp; Brief</h4>
+      <p>We meet with hiring decision-makers to understand the role, team context, compensation benchmarks and cultural requirements in detail.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-dot"></div>
+      <div class="step-num">Step 02</div>
+      <h4>Targeted Search</h4>
+      <p>We activate our exclusive network of senior Filipino Finance professionals — both UAE-based and in the Philippines — with a tailored search strategy.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-dot"></div>
+      <div class="step-num">Step 03</div>
+      <h4>Curated Shortlist</h4>
+      <p>You receive a concise, qualified shortlist of candidates — each assessed against your brief, with our detailed profile notes and honest recommendations.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-dot"></div>
+      <div class="step-num">Step 04</div>
+      <h4>Placement &amp; Beyond</h4>
+      <p>We manage interviews, offers and onboarding — and stay engaged post-placement to ensure the hire lands well on both sides.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors-section" id="sectors">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Sector Coverage</span>
+      </div>
+      <h2 class="section-title">Where we place<br><em>today and tomorrow</em></h2>
+    </div>
+    <p style="font-size:0.85rem;color:var(--muted);max-width:30ch;line-height:1.6;margin-bottom:0.5rem;" class="reveal">Laser-focused in Year 1, with a clear expansion path into adjacent specialisms.</p>
+  </div>
+
+  <div class="sectors-grid">
+    <div class="sector-card reveal">
+      <div>
+        <div class="sector-name">Accounting &amp; Finance</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;">Permanent &amp; contract placements, Manager level and above</div>
+      </div>
+      <span class="sector-status active">Active — Year 1</span>
+    </div>
+    <div class="sector-card reveal reveal-delay-1">
+      <div>
+        <div class="sector-name">Audit &amp; Tax</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;">Internal audit, external audit, corporate tax professionals</div>
+      </div>
+      <span class="sector-status future">Year 2</span>
+    </div>
+    <div class="sector-card reveal reveal-delay-2">
+      <div>
+        <div class="sector-name">Compliance &amp; Risk</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;">Regulatory compliance, AML, risk management roles</div>
+      </div>
+      <span class="sector-status future">Year 2</span>
+    </div>
+    <div class="sector-card reveal">
+      <div>
+        <div class="sector-name">Human Resources</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;">Senior HR, TA, and People leadership positions</div>
+      </div>
+      <span class="sector-status future">Year 2</span>
+    </div>
+    <div class="sector-card reveal reveal-delay-1">
+      <div>
+        <div class="sector-name">Technology &amp; IT</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;">Finance systems, ERP, technology leadership</div>
+      </div>
+      <span class="sector-status future">Year 2</span>
+    </div>
+    <div class="sector-card reveal reveal-delay-2">
+      <div>
+        <div class="sector-name">Executive Search</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;">Retained search for C-suite and senior leadership mandates</div>
+      </div>
+      <span class="sector-status future">Year 2</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg-text">VERTEX</div>
+  <div class="cta-content">
+    <div class="section-eyebrow" style="justify-content:center;">
+      <div class="section-eyebrow-line"></div>
+      <span>Get in Touch</span>
+      <div class="section-eyebrow-line"></div>
+    </div>
+    <h2 class="cta-title">Ready to hire<br><em>exceptional talent?</em></h2>
+    <p class="cta-sub">
+      Whether you're a UAE employer with an active mandate or a Filipino finance professional ready for your next step — let's have a conversation.
+    </p>
+    <div class="cta-actions">
+      <a href="mailto:hello@vertexsearch.ae" class="btn-cream">
+        For Employers
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="mailto:careers@vertexsearch.ae" class="btn-outline-gold">
+        For Candidates
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a class="nav-logo" href="#"><span>V</span>ERTEX SEARCH</a>
+  <div class="footer-badges">
+    <span class="badge">UAE Licensed</span>
+    <span class="badge">POEA / DMW Compliant</span>
+  </div>
+  <div class="footer-meta">
+    <span>© 2026 Vertex Search. All rights reserved.</span>
+    <a href="#">Privacy Policy</a>
+    <span>Dubai, UAE</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
